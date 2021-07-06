@@ -2,6 +2,7 @@ const loveMe = document.querySelector('.loveMe')
 const times = document.querySelector('#times')
 
 let clickTime = 0
+let timesClicked = 0
 
 // loveMe.addEventListener('dblclick') WOULD WORK HERE TOO 
 
@@ -36,4 +37,8 @@ const createHeart = (e) => {
     heart.style.left = `${xInside}px`
 
     loveMe.appendChild(heart)
+
+    times.innerHTML = ++timesClicked
+
+    setTimeout(() => heart.remove(), 1000)
 }
